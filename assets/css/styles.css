@@ -11,10 +11,10 @@
 
 /* =======main======= */
 main {
-  min-height: calc(100vh - (70px + 50px));
+  min-height: calc(100vh - (70px + 53px));
 }
 .calc-grid-container {
-  min-height: calc(100vh - (70px + 50px));
+  min-height: calc(100vh - (70px + 53px));
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
@@ -31,3 +31,20 @@ main {
   cursor: pointer;
 }
 /* =======main======= */
+
+/* =======footer======= */
+.footer-text-container {
+  background-color: var(--dark-200);
+  text-align: center;
+}
+.footer-text p,
+.footer-text a {
+  color: var(--font-light);
+  padding: 16px 0;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+.footer-text a:hover {
+  color: var(--teal);
+}
+/* =======footer======= */
