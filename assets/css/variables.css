@@ -1,0 +1,10 @@
+/* ==========color variables========== */
+:root {
+  --font-dark: rgbA(34, 40, 49, 1);
+  --font-light: rgbA(238, 238, 238, 1);
+  --dark-100: rgbA(34, 40, 49, 1);
+  --dark-200: rgbA(57, 62, 70, 1);
+  --teal: rgbA(0, 173, 181, 1);
+  --grey: rgbA(238, 238, 238, 1);
+}
+/* ==========color variables========== */
