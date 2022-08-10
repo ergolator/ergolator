@@ -1,0 +1,10 @@
+/* =======header======= */
+.logo-container {
+  background-color: var(--dark-200);
+  text-align: center;
+  padding: 16.5px 0;
+}
+.logo-container h1 {
+  color: var(--font-light);
+}
+/* =======header======= */
