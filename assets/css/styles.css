@@ -8,3 +8,26 @@
   color: var(--font-light);
 }
 /* =======header======= */
+
+/* =======main======= */
+main {
+  min-height: calc(100vh - (70px + 50px));
+}
+.calc-grid-container {
+  min-height: calc(100vh - (70px + 50px));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 0 10vw;
+}
+
+.calc-container {
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.calc-container:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+/* =======main======= */
