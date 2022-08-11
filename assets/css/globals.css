@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  color: var(--font-dark);
 }
 
 body,
@@ -69,6 +70,23 @@ input[type="radio"] {
   margin: 0;
 }
 
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+.separator {
+  border: 1px solid var(--separator);
+}
+
+.vertical-separator {
+  height: 200px;
+}
 /* =======header======= */
 .nav-header {
   background-color: var(--dark-200);

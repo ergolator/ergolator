@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../assets/css/globals.css" />
   <link rel="stylesheet" href="./rula-style.css" />
 
-  <title>RULA</title>
+  <title>Ergolator - RULA</title>
 </head>
 
 <body>
@@ -77,18 +77,21 @@
                 <img src="./imgs/upper-arm-5.png" alt=""> <br> 90 or more
               </label>
             </div>
+
+            <div class="separator vertical-separator"></div>
+
             <div class="upper-arm-checkbox form-checkbox-section">
               <div>
-                <label for="shoulder-raised">Shoulder is Raised</label>
                 <input type="checkbox" name="shoulder-raised" id="shoulder-raised">
+                <label for="shoulder-raised">Shoulder is Raised</label>
               </div>
               <div>
-                <label for="arm-abducted">Upper Arm is abducted</label>
                 <input type="checkbox" name="arm-abducted" id="arm-abducted">
+                <label for="arm-abducted">Upper Arm is abducted</label>
               </div>
               <div>
-                <label for="arm-supported">Arm is supported</label>
                 <input type="checkbox" name="arm-supported" id="arm-supported">
+                <label for="arm-supported">Arm is supported</label>
               </div>
             </div>
           </div>
@@ -104,32 +107,90 @@
             <div>
               <input type="radio" name="lower-arm-pos" id="lower-arm-a">
               <label for="lower-arm-a">
-                <img src="./imgs/lower-arm-1.png" alt=""> <br> -20 to 20
+                <img src="./imgs/lower-arm-1.png" alt=""> <br> 60 to 100
               </label>
             </div>
             <div>
               <input type="radio" name="lower-arm-pos" id="lower-arm-b">
               <label for="lower-arm-b">
-                <img src="./imgs/lower-arm-2.png" alt=""> <br> -20 or further back
+                <img src="./imgs/lower-arm-2.png" alt=""> <br> 0 to 60 or 100+
+              </label>
+            </div>
+
+            <div class="separator vertical-separator"></div>
+
+            <div>
+              <input type="radio" name="lower-arm-adjustment" id="lower-arm-midline-body">
+              <label class="lower-arm-adjustment" for="lower-arm-midline-body">Arm is working across midline of the
+                body</label>
+            </div>
+            <div>
+              <input type="radio" name="lower-arm-adjustment" id="lower-arm-outside-body">
+              <label class="lower-arm-adjustment" for="lower-arm-outside-body">Arm is outside of the body</label>
+            </div>
+          </div>
+
+          <div class="separator"></div>
+
+          <div class="wrist-container form-section">
+            <legend>
+              Wrist <br>
+              Position
+            </legend>
+            <div>
+              <input type="radio" name="wrist-pos" id="wrist-a">
+              <label for="wrist-a">
+                <img src="./imgs/wrist-1.png" alt=""> <br> Zero
               </label>
             </div>
             <div>
-              <input type="radio" name="lower-arm-pos" id="lower-arm-c">
-              <label for="lower-arm-c">
-                <img src="./imgs/lower-arm-3.png" alt=""> <br> 20 to 45
+              <input type="radio" name="wrist-pos" id="wrist-b">
+              <label for="wrist-b">
+                <img src="./imgs/wrist-2.png" alt=""> <br> 15 to 15
               </label>
             </div>
-            <div class="lower-arm-checkbox form-checkbox-section">
+            <div>
+              <input type="radio" name="wrist-pos" id="wrist-c">
+              <label for="wrist-c">
+                <img src="./imgs/wrist-3.png" alt=""> <br> 15+ to 15+
+              </label>
+            </div>
+
+            <div class="separator vertical-separator"></div>
+
+            <div class="wrist-checkbox form-checkbox-section">
               <div>
-                <label for="lower-arm-midline-body">Arm working across midline of the body</label>
-                <input type="checkbox" name="lower-arm-midline-body" id="lower-arm-midline-body">
+                <input type="checkbox" name="wrist-midline-body" id="wrist-midline-body">
+                <label for="wrist-midline-body">
+                  <img src="./imgs/wrist-4.png" alt=""><br>Wrist is bent<br>from the midline
+                </label>
               </div>
               <div>
-                <label for="lower-arm-outside-body">Arm outside of body</label>
-                <input type="checkbox" name="lower-arm-outside-body" id="lower-arm-outside-body">
+                <input type="checkbox" name="wrist-outside-body" id="wrist-outside-body">
+                <label for="wrist-outside-body">Arm is outside of body</label>
               </div>
             </div>
           </div>
+
+          <div class="separator"></div>
+
+          <div class="wrist-twist-container form-section">
+            <legend>
+              Wrist <br>
+              Twist
+            </legend>
+            <div class="wrist-twist-checkbox form-checkbox-section">
+              <div>
+                <input type="checkbox" name="wrist-twist-mid-range" id="wrist-twist-mid-range">
+                <label for="wrist-twist-mid-range"> Wrist is twisted in mid-range </label>
+              </div>
+              <div>
+                <input type="checkbox" name="wrist-twist-end-body" id="wrist-twist-end-body">
+                <label for="wrist-twist-end-body">Wrist is twisted at or near end of range</label>
+              </div>
+            </div>
+          </div>
+
         </form>
       </div>
     </div>
