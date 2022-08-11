@@ -53,16 +53,53 @@ a {
   white-space: nowrap;
   width: 1px;
 }
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
 
 /* =======header======= */
-.logo-container {
+.nav-header {
   background-color: var(--dark-200);
-  padding: 16.5px 0;
+  padding: 16px 0;
 }
-.logo-container h1 {
+
+.nav-item,
+.nav-link,
+.nav-logo-link,
+.current-page h1 {
   color: var(--font-light);
 }
+
+.nav-logo-link {
+  font-size: 24px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-logo {
+  margin-right: auto;
+}
+
+.current-page {
+  margin-right: auto;
+}
+
+.nav-link:hover,
+.nav-logo-link:hover {
+  color: var(--teal);
+}
 /* =======header======= */
+
+/* =======main======= */
+main {
+  min-height: calc(100vh - (60px + 46px));
+}
+/* =======main======= */
 
 /* =======footer======= */
 .footer-text-container {
