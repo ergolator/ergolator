@@ -32,7 +32,7 @@ input[type="radio"] ~ label {
 }
 
 input[type="radio"]:checked ~ label {
-  outline: 2px solid var(--dark-200);
+  outline: 3px solid var(--dark-200);
   transform: scale(1.1);
 }
 
