@@ -2,6 +2,10 @@
 .landing-logo {
   text-align: center;
 }
+.nav-logo-link:hover {
+  color: var(--font-light);
+  cursor: default;
+}
 /* =======header======= */
 
 /* =======main======= */
