@@ -87,6 +87,28 @@ input[type="checkbox"] {
 .vertical-separator {
   height: 200px;
 }
+
+.hidden-block {
+  display: none;
+}
+
+.btn {
+  background-color: var(--teal);
+  border: 1px solid var(--dark-200);
+  font-size: 20px;
+  color: var(--font-light);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.end-separator {
+  margin-top: 20px;
+}
 /* =======header======= */
 .nav-header {
   background-color: var(--dark-200);
@@ -127,6 +149,11 @@ input[type="checkbox"] {
 /* =======main======= */
 main {
   min-height: calc(100vh - (60px + 46px));
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
 /* =======main======= */
 

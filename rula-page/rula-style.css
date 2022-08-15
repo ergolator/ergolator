@@ -75,3 +75,19 @@ input[type="checkbox"]:checked + label {
 .wrist-twist-checkbox {
   margin: 0 auto;
 }
+
+.no-img-radios {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.no-img-radios label,
+.leg-adjustment {
+  font-size: 18px;
+  padding: 6px;
+}
+
+.next-btn-container {
+  margin-left: auto;
+  margin-top: 14px;
+}

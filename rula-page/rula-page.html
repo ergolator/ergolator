@@ -320,10 +320,15 @@
                 </div>
               </div>
             </form>
+
+            <div class="separator end-separator"></div>
+            <div class="next-btn-container">
+              <button type="button" class="btn table-a-btn">Next</button>
+            </div>
           </div>
         </section>
 
-        <section class="rula-table-b">
+        <section class="rula-table-b hidden-block">
           <div class="form-container table-b-form-container">
             <form action="">
               <div class="neck-container form-section">
@@ -380,7 +385,8 @@
                     value="4"
                   />
                   <label for="neck-d">
-                    <img src="./imgs/TableB/neck4.png" alt="" />
+                    <img src="./imgs/TableB/neck4.png" alt="" /> <br />
+                    Bent Backwards
                   </label>
                 </div>
 
@@ -468,31 +474,40 @@
                     60 or more
                   </label>
                 </div>
-                <div>
-                  <input
-                    type="radio"
-                    name="trunkSupported"
-                    id="trunk-supported"
-                    value="1"
-                  />
-                  <label class="trunk-adjustment" for="trunk-supported"
-                    >Trunk is Well Supported While Seated</label
-                  >
-                </div>
-                <div>
-                  <input
-                    type="radio"
-                    name="trunkSupported"
-                    id="trunk-not-supported"
-                    value="2"
-                  />
-                  <label class="trunk-adjustment" for="trunk-not-supported"
-                    >Trunk is Not Supported While Seated</label
-                  >
+
+                <div class="separator vertical-separator"></div>
+
+                <div class="no-img-radios">
+                  <div>
+                    <input
+                      type="radio"
+                      name="trunkSupported"
+                      id="trunk-supported"
+                      value="1"
+                      class="trunk-supported"
+                    />
+                    <label class="trunk-adjustment" for="trunk-supported"
+                      >Trunk is Well <br />
+                      Supported While Seated</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="trunkSupported"
+                      id="trunk-not-supported"
+                      value="2"
+                      class="trunk-supported"
+                    />
+                    <label class="trunk-adjustment" for="trunk-not-supported"
+                      >Trunk is Not <br />
+                      Supported While Seated</label
+                    >
+                  </div>
                 </div>
 
                 <div class="separator vertical-separator"></div>
-                <!-- ERROR HERE -->
+
                 <div class="trunk-checkbox form-checkbox-section">
                   <div>
                     <input
@@ -533,9 +548,11 @@
                     name="legSupported"
                     id="leg-supported"
                     value="1"
+                    class="leg-radio"
                   />
                   <label class="leg-adjustment" for="leg-supported"
-                    >Legs and Feet Supported and Balanced</label
+                    >Legs and Feet are <br />
+                    Supported and Balanced</label
                   >
                 </div>
 
@@ -545,13 +562,18 @@
                     name="legSupported"
                     id="leg-not-supported"
                     value="2"
+                    class="leg-radio"
                   />
                   <label class="leg-adjustment" for="leg-not-supported"
-                    >Legs and Feet Not Supported and Balanced</label
+                    >Legs and Feet are Not <br />
+                    Supported and Balanced</label
                   >
                 </div>
               </div>
             </form>
+            <div class="next-btn-container">
+              <button type="button" class="btn table-b-btn">Next</button>
+            </div>
           </div>
         </section>
       </div>
