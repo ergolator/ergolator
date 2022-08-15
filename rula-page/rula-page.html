@@ -39,6 +39,8 @@
 
   <main>
     <div class="container">
+      <div class="test-btn-class"><button class="test-btn">TEST</button></div>
+      <div class="rula-result">test</div>
       <div class="form-container">
         <form action="">
           <div class="upper-arm-container form-section">
@@ -48,31 +50,31 @@
               Position
             </legend>
             <div>
-              <input type="radio" name="upper-arm-pos" id="upper-arm-a">
+              <input type="radio" name="upperArmPos" id="upper-arm-a" required class="upper-arm-radio" value="1">
               <label for="upper-arm-a">
                 <img src="./imgs/upper-arm-1.png" alt=""> <br> -20 to 20
               </label>
             </div>
             <div>
-              <input type="radio" name="upper-arm-pos" id="upper-arm-b">
+              <input type="radio" name="upperArmPos" id="upper-arm-b" class="upper-arm-radio" value="2">
               <label for="upper-arm-b">
                 <img src="./imgs/upper-arm-2.png" alt=""> <br> -20 or further back
               </label>
             </div>
             <div>
-              <input type="radio" name="upper-arm-pos" id="upper-arm-c">
+              <input type="radio" name="upperArmPos" id="upper-arm-c" class="upper-arm-radio" value="2">
               <label for="upper-arm-c">
                 <img src="./imgs/upper-arm-3.png" alt=""> <br> 20 to 45
               </label>
             </div>
             <div>
-              <input type="radio" name="upper-arm-pos" id="upper-arm-d">
+              <input type="radio" name="upperArmPos" id="upper-arm-d" class="upper-arm-radio" value="3">
               <label for="upper-arm-d">
                 <img src="./imgs/upper-arm-4.png" alt=""> <br> 45 to 90
               </label>
             </div>
             <div>
-              <input type="radio" name="upper-arm-pos" id="upper-arm-e">
+              <input type="radio" name="upperArmPos" id="upper-arm-e" class="upper-arm-radio" value="4">
               <label for="upper-arm-e">
                 <img src="./imgs/upper-arm-5.png" alt=""> <br> 90 or more
               </label>
@@ -82,15 +84,15 @@
 
             <div class="upper-arm-checkbox form-checkbox-section">
               <div>
-                <input type="checkbox" name="shoulder-raised" id="shoulder-raised">
+                <input type="checkbox" name="shoulderRaised" id="shoulder-raised" value="1">
                 <label for="shoulder-raised">Shoulder is Raised</label>
               </div>
               <div>
-                <input type="checkbox" name="arm-abducted" id="arm-abducted">
+                <input type="checkbox" name="armAbducted" id="arm-abducted" value="1">
                 <label for="arm-abducted">Upper Arm is abducted</label>
               </div>
               <div>
-                <input type="checkbox" name="arm-supported" id="arm-supported">
+                <input type="checkbox" name="armSupported" id="arm-supported" value="-1">
                 <label for="arm-supported">Arm is supported</label>
               </div>
             </div>
@@ -105,13 +107,13 @@
               Position
             </legend>
             <div>
-              <input type="radio" name="lower-arm-pos" id="lower-arm-a">
+              <input type="radio" name="lowerArmPos" id="lower-arm-a" required class="lower-arm-radio" value="1">
               <label for="lower-arm-a">
                 <img src="./imgs/lower-arm-1.png" alt=""> <br> 60 to 100
               </label>
             </div>
             <div>
-              <input type="radio" name="lower-arm-pos" id="lower-arm-b">
+              <input type="radio" name="lowerArmPos" id="lower-arm-b" class="lower-arm-radio" value="2">
               <label for="lower-arm-b">
                 <img src="./imgs/lower-arm-2.png" alt=""> <br> 0 to 60 or 100+
               </label>
@@ -120,13 +122,13 @@
             <div class="separator vertical-separator"></div>
 
             <div>
-              <input type="radio" name="lower-arm-adjustment" id="lower-arm-midline-body">
+              <input type="checkbox" name="lowerArmMidline" id="lower-arm-midline-body" required value="1">
               <label class="lower-arm-adjustment" for="lower-arm-midline-body">Arm is working across midline of the
                 body</label>
             </div>
             <div>
-              <input type="radio" name="lower-arm-adjustment" id="lower-arm-outside-body">
-              <label class="lower-arm-adjustment" for="lower-arm-outside-body">Arm is outside of the body</label>
+              <input type="checkbox" name="lowerArmOutToSide" id="lower-arm-outside-body" value="1">
+              <label class="lower-arm-adjustment" for="lower-arm-outside-body">Arm is out to side of the body</label>
             </div>
           </div>
 
@@ -138,19 +140,19 @@
               Position
             </legend>
             <div>
-              <input type="radio" name="wrist-pos" id="wrist-a">
+              <input type="radio" name="wristPos" id="wrist-a" required class="wrist-radio" value="1">
               <label for="wrist-a">
                 <img src="./imgs/wrist-1.png" alt=""> <br> Zero
               </label>
             </div>
             <div>
-              <input type="radio" name="wrist-pos" id="wrist-b">
+              <input type="radio" name="wristPos" id="wrist-b" class="wrist-radio" value="2">
               <label for="wrist-b">
                 <img src="./imgs/wrist-2.png" alt=""> <br> 15 to 15
               </label>
             </div>
             <div>
-              <input type="radio" name="wrist-pos" id="wrist-c">
+              <input type="radio" name="wristPos" id="wrist-c" class="wrist-radio" value="3">
               <label for="wrist-c">
                 <img src="./imgs/wrist-3.png" alt=""> <br> 15+ to 15+
               </label>
@@ -160,14 +162,10 @@
 
             <div class="wrist-checkbox form-checkbox-section">
               <div>
-                <input type="checkbox" name="wrist-midline-body" id="wrist-midline-body">
+                <input type="checkbox" name="wristMidline" id="wrist-midline-body" value="1">
                 <label for="wrist-midline-body">
                   <img src="./imgs/wrist-4.png" alt=""><br>Wrist is bent<br>from the midline
                 </label>
-              </div>
-              <div>
-                <input type="checkbox" name="wrist-outside-body" id="wrist-outside-body">
-                <label for="wrist-outside-body">Arm is outside of body</label>
               </div>
             </div>
           </div>
@@ -181,11 +179,11 @@
             </legend>
             <div class="wrist-twist-checkbox form-checkbox-section">
               <div>
-                <input type="checkbox" name="wrist-twist-mid-range" id="wrist-twist-mid-range">
+                <input type="radio" name="wristTwist" id="wrist-twist-mid-range" class="wrist-twist-pos" value="1">
                 <label for="wrist-twist-mid-range"> Wrist is twisted in mid-range </label>
               </div>
               <div>
-                <input type="checkbox" name="wrist-twist-end-body" id="wrist-twist-end-body">
+                <input type="radio" name="wristTwist" id="wrist-twist-end-body" class="wrist-twist-pos" value="2">
                 <label for="wrist-twist-end-body">Wrist is twisted at or near end of range</label>
               </div>
             </div>
