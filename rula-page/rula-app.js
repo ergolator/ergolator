@@ -92,6 +92,20 @@ const wrist4 = {
     [9, 9, 9],
   ],
 };
+const trunk1 = { leg1: [1, 2, 3, 5, 7, 8], leg2: [3, 3, 3, 5, 7, 8] };
+const trunk2 = { leg1: [2, 2, 3, 5, 7, 8], leg2: [3, 3, 4, 6, 7, 8] };
+const trunk3 = { leg1: [3, 4, 4, 6, 7, 8], leg2: [4, 5, 5, 7, 8, 8] };
+const trunk4 = { leg1: [5, 5, 5, 7, 8, 8], leg2: [5, 5, 6, 7, 8, 9] };
+const trunk5 = { leg1: [6, 6, 6, 7, 8, 9], leg2: [6, 7, 7, 7, 8, 9] };
+const trunk6 = { leg1: [7, 7, 7, 8, 8, 9], leg2: [7, 7, 7, 8, 8, 9] };
+
+const finalTableColumn1 = [1, 2, 3, 3, 4, 4, 5, 5];
+const finalTableColumn2 = [2, 2, 3, 3, 4, 4, 5, 5];
+const finalTableColumn3 = [3, 3, 3, 3, 4, 5, 6, 6];
+const finalTableColumn4 = [3, 4, 4, 4, 5, 6, 6, 7];
+const finalTableColumn5 = [4, 4, 4, 5, 6, 6, 7, 7];
+const finalTableColumn6 = [5, 5, 5, 6, 7, 7, 7, 7];
+const finalTableColumn7 = [5, 5, 6, 6, 7, 7, 7, 7];
 
 const testBtn = document.querySelector(".test-btn");
 const upperArmSelection = document.querySelectorAll(".upper-arm-radio");
