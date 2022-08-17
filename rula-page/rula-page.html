@@ -187,8 +187,8 @@
 
                 <div>
                   <input
-                    type="radio"
-                    name="lowerArmAdjustment"
+                    type="checkbox"
+                    name="lowerArmMidLine"
                     id="lower-arm-midline-body"
                     required
                     value="1"
@@ -201,8 +201,8 @@
                 </div>
                 <div>
                   <input
-                    type="radio"
-                    name="lowerArmAdjustment"
+                    type="checkbox"
+                    name="lowerArmOutToSide"
                     id="lower-arm-outside-body"
                     value="1"
                   />
@@ -313,6 +313,85 @@
                     >
                   </div>
                 </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="muscle-use-container form-section">
+                <legend>
+                  Muscle use <br />
+                  Score
+                </legend>
+
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="tableAMuscleScore"
+                      id="table-a-muscle-score"
+                      class="table-a-muscle-score"
+                      value="1"
+                    />
+                    <label for="table-a-muscle-score">
+                      If posture mainly static (held for longer than 1 minute)
+                      <br />
+                      or if action repeatedly occurs 4 times per minute or more
+                    </label>
+                  </div>
+
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="force-use-container form-section">
+                <legend>Load Score</legend>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-a"
+                      class="table-a-force-score"
+                      value="0"
+                    />
+                    <label for="table-a-force-score-a">
+                      If load less than 2 KG <br> (intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-b"
+                      class="table-a-force-score"
+                      value="1"
+                    />
+                    <label for="table-a-force-score-b">
+                      If 2 KG to 10 KG  <br>(intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-c"
+                      class="table-a-force-score"
+                      value="2"
+                    />
+                    <label for="table-a-force-score-c">
+                      If 2 KG to 10 KG <br> (static or repeated)
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-d"
+                      class="table-a-force-score"
+                      value="3"
+                    />
+                    <label for="table-a-force-score-d">
+                      If more than 10 KG load <br> or repeated or shocks
+                    </label>
+                  </div>
               </div>
             </form>
 
@@ -470,7 +549,8 @@
                   </label>
                 </div>
 
-                <div class="separator vertical-separator"></div>
+                <!-- <div class="separator vertical-separator"></div> -->
+
                 <!-- left for backup reasons in case they are requested -->
                 <!-- <div class="no-img-radios">
                   <div>
@@ -565,7 +645,88 @@
                   >
                 </div>
               </div>
+            
+              <div class="separator"></div>
+
+              <div class="muscle-use-container form-section">
+                <legend>
+                  Muscle use <br />
+                  Score
+                </legend>
+
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="tableBMuscleScore"
+                      id="table-b-muscle-score"
+                      class="table-b-muscle-score"
+                      value="1"
+                    />
+                    <label for="table-b-muscle-score">
+                      If posture mainly static
+                      <br />
+                      or if action repeatedly occurs 4 times per minute or more
+                    </label>
+                  </div>
+
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="force-use-container form-section">
+                <legend>Load Score</legend>
+
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-a"
+                      class="table-b-force-score"
+                      value="0"
+                    />
+                    <label for="table-b-force-score-a">
+                      If load less than 2 KG <br> (intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-b"
+                      class="table-b-force-score"
+                      value="1"
+                    />
+                    <label for="table-b-force-score-b">
+                      If 2 KG to 10 KG  <br>(intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-c"
+                      class="table-b-force-score"
+                      value="2"
+                    />
+                    <label for="table-b-force-score-c">
+                      If 2 KG to 10 KG <br> (static or repeated)
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-d"
+                      class="table-b-force-score"
+                      value="3"
+                    />
+                    <label for="table-b-force-score-d">
+                      If more than 10 KG load <br> or repeated or shocks
+                    </label>
+                  </div>
+              </div>
+
             </form>
+
             <div class="next-btn-container">
               <button type="button" class="btn table-b-btn">Next</button>
             </div>

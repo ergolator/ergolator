@@ -14,6 +14,10 @@ let tableAObject = {
   wristMidline: 0,
 
   wristTwist: 0,
+
+  tableAForceScore: 0,
+
+  tableAMuscleScore: 0,
 };
 
 let tableBObject = {
@@ -27,6 +31,10 @@ let tableBObject = {
   trunkSideBending: 0,
 
   legSupported: 0,
+
+  tableBForceScore: 0,
+
+  tableBMuscleScore: 0,
 };
 
 const wrist1 = {
@@ -130,6 +138,7 @@ const tableARadios = document.querySelectorAll(
 const armsCheckboxes = document.querySelectorAll(
   `.rula-table-a input[type="checkbox"]`
 );
+const tableAForceSelection = document.querySelectorAll(".table-a-force-score");
 
 const neckRadio = document.querySelectorAll(".neck-radio");
 const trunkRadio = document.querySelectorAll(".trunk-radio");
@@ -141,6 +150,7 @@ const tableBRadios = document.querySelectorAll(
 const tableBCheckboxes = document.querySelectorAll(
   `.rula-table-b input[type="checkbox"]`
 );
+const tableBForceSelection = document.querySelectorAll(".table-b-force-score");
 
 const resultTableA = document.querySelector(".table-a-score");
 const resultTableB = document.querySelector(".table-b-score");
@@ -218,6 +228,13 @@ function getWristTwistInputs() {
     }
   });
 }
+function getTableAForceInputs() {
+  tableAForceSelection.forEach((item) => {
+    if (item.checked) {
+      tableAObject[`${item.name}`] = Number(item.value);
+    }
+  });
+}
 function getTableACheckboxInputs() {
   armsCheckboxes.forEach((item) => {
     if (item.checked) {
@@ -256,6 +273,10 @@ function getTableAScore() {
   let lowerArmScore = getLowerArmScore();
   let wristScore = getWristScore();
   let wristTwistScore = tableAObject.wristTwist;
+  console.log(upperArmScore);
+  console.log(lowerArmScore);
+  console.log(wristScore);
+  console.log(wristTwistScore);
   const objSelectionArray = [wrist1, wrist2, wrist3, wrist4];
   console.log(
     objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
@@ -303,6 +324,14 @@ function getTableBCheckboxInputs() {
     }
   });
 }
+function getTableBForceInputs() {
+  tableBForceSelection.forEach((item) => {
+    if (item.checked) {
+      tableBObject[`${item.name}`] = Number(item.value);
+    }
+  });
+}
+
 function getNeckScore() {
   getNeckInput();
   return (
@@ -311,7 +340,6 @@ function getNeckScore() {
     tableBObject.neckSideBending
   );
 }
-
 function getTrunkScore() {
   getTrunkInput();
   // getTrunkSupportInput();
@@ -335,6 +363,12 @@ function getTableBScore() {
 
 // ===========Result===========
 function getFinalScore(tableBScore, tableAScore) {
+  getTableBForceInputs();
+  tableBScore += tableBObject.tableBForceScore + tableBObject.tableBMuscleScore;
+
+  getTableAForceInputs();
+  tableAScore += tableAObject.tableAForceScore + tableAObject.tableAMuscleScore;
+
   const selectionArray = [
     finalTableColumn1,
     finalTableColumn2,

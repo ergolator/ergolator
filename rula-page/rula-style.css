@@ -171,3 +171,12 @@ input[type="checkbox"]:checked + label {
   font-size: 24px;
   padding: 8px 24px;
 }
+
+.muscle-use-container div {
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.force-use-container div {
+  font-size: 20px;
+}
