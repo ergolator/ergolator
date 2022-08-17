@@ -1,5 +1,4 @@
 "use strict";
-// let test = 1;
 
 let tableAObject = {
   upperArmPos: 0,
@@ -23,7 +22,7 @@ let tableBObject = {
   neckSideBending: 0,
 
   trunkPos: 0,
-  trunkSupported: 0,
+  // trunkSupported: 0,
   trunkTwisted: 0,
   trunkSideBending: 0,
 
@@ -143,25 +142,36 @@ const tableBCheckboxes = document.querySelectorAll(
   `.rula-table-b input[type="checkbox"]`
 );
 
-const testBtn = document.querySelector(".test-btn");
+const resultTableA = document.querySelector(".table-a-score");
+const resultTableB = document.querySelector(".table-b-score");
+const finalScoreBox = document.querySelector(".final-score-box");
+const finalScore = document.querySelector(".final-score");
+const finalScoreSeverity = document.querySelector(".result-severity p");
+
 const tableABtn = document.querySelector(".table-a-btn");
 const tableBBtn = document.querySelector(".table-b-btn");
 
 const tableAView = document.querySelector(".rula-table-a");
 const tableBView = document.querySelector(".rula-table-b");
-
-testBtn.addEventListener("click", tempRulaRunner);
+const resultView = document.querySelector(".results-section");
 
 tableABtn.addEventListener("click", () => {
   checkRadioState(tableARadios, 4);
 });
 tableBBtn.addEventListener("click", () => {
-  checkRadioState(tableBRadios, 3);
+  if (checkRadioState(tableBRadios, 3)) {
+    switchToResultsView();
+    displayScoreValues();
+  }
 });
 
 function switchToNextView() {
   tableAView.classList.add("hidden-block");
   tableBView.classList.remove("hidden-block");
+}
+function switchToResultsView() {
+  tableBView.classList.add("hidden-block");
+  resultView.classList.remove("hidden-block");
 }
 
 function checkRadioState(radioNodes, radioLimit) {
@@ -175,6 +185,7 @@ function checkRadioState(radioNodes, radioLimit) {
 
   if (itemCount >= radioLimit) {
     switchToNextView();
+    return true;
   }
 }
 
@@ -246,7 +257,11 @@ function getTableAScore() {
   let wristScore = getWristScore();
   let wristTwistScore = tableAObject.wristTwist;
   const objSelectionArray = [wrist1, wrist2, wrist3, wrist4];
-
+  console.log(
+    objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
+      upperArmScore - 1
+    ][lowerArmScore - 1]
+  );
   return objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
     upperArmScore - 1
   ][lowerArmScore - 1];
@@ -267,13 +282,13 @@ function getTrunkInput() {
     }
   });
 }
-function getTrunkSupportInput() {
-  trunkSupportedRadio.forEach((item) => {
-    if (item.checked) {
-      tableBObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
+// function getTrunkSupportInput() {
+//   trunkSupportedRadio.forEach((item) => {
+//     if (item.checked) {
+//       tableBObject[`${item.name}`] = Number(item.value);
+//     }
+//   });
+// }
 function getLegInput() {
   legRadio.forEach((item) => {
     if (item.checked) {
@@ -299,12 +314,12 @@ function getNeckScore() {
 
 function getTrunkScore() {
   getTrunkInput();
-  getTrunkSupportInput();
+  // getTrunkSupportInput();
   return (
     tableBObject.trunkPos +
-    tableBObject.trunkSupported +
     tableBObject.trunkTwisted +
     tableBObject.trunkSideBending
+    // tableBObject.trunkSupported +
   );
 }
 
@@ -316,6 +331,53 @@ function getTableBScore() {
   return objSelectionArray[getTrunkScore() - 1][`leg${legScore}`][
     getNeckScore() - 1
   ];
+}
+
+// ===========Result===========
+function getFinalScore(tableBScore, tableAScore) {
+  const selectionArray = [
+    finalTableColumn1,
+    finalTableColumn2,
+    finalTableColumn3,
+    finalTableColumn4,
+    finalTableColumn5,
+    finalTableColumn6,
+    finalTableColumn7,
+  ];
+  if (tableBScore > 7) {
+    tableBScore = 7;
+  }
+  if (tableAScore > 8) {
+    tableAScore = 8;
+  }
+  return selectionArray[tableBScore - 1][tableAScore - 1];
+}
+
+function displayScoreValues() {
+  let tableBScore = getTableBScore();
+  let tableAScore = getTableAScore();
+  let finalScoreVal = getFinalScore(tableBScore, tableAScore);
+
+  resultTableA.textContent = `${tableAScore}`;
+  resultTableB.textContent = `${tableBScore}`;
+  finalScore.textContent = `${finalScoreVal}`;
+  displayFinalScoreColor(finalScoreVal);
+}
+
+function displayFinalScoreColor(finalScore) {
+  if (finalScore < 3) {
+    finalScoreBox.classList.add("score-green");
+    finalScoreSeverity.textContent = "Acceptable";
+  } else if (finalScore < 5) {
+    finalScoreBox.classList.add("score-yellow");
+    finalScoreSeverity.textContent = "Investigate further";
+  } else if (finalScore < 7) {
+    finalScoreBox.classList.add("score-orange");
+    finalScoreSeverity.textContent = "Investigate further and change soon";
+  } else {
+    finalScoreBox.classList.add("score-red");
+    finalScoreSeverity.textContent = "Investigate and change Immediately";
+  }
 }
 // ===========TEMP===========
 const displayResult = document.querySelector(".rula-result");

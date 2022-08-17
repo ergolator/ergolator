@@ -38,9 +38,6 @@
 
     <main>
       <div class="container">
-        <div class="test-btn-class"><button class="test-btn">TEST</button></div>
-        <div class="rula-result">test</div>
-
         <section class="rula-table-a">
           <div class="form-container table-a-form-container">
             <form action="">
@@ -188,12 +185,10 @@
 
                 <div class="separator vertical-separator"></div>
 
-                <div class="lower-arm-checkbox form-checkbox-section"></div>
-
                 <div>
                   <input
-                    type="checkbox"
-                    name="lowerArmMidline"
+                    type="radio"
+                    name="lowerArmAdjustment"
                     id="lower-arm-midline-body"
                     required
                     value="1"
@@ -206,8 +201,8 @@
                 </div>
                 <div>
                   <input
-                    type="checkbox"
-                    name="lowerArmOutToSide"
+                    type="radio"
+                    name="lowerArmAdjustment"
                     id="lower-arm-outside-body"
                     value="1"
                   />
@@ -476,8 +471,8 @@
                 </div>
 
                 <div class="separator vertical-separator"></div>
-
-                <div class="no-img-radios">
+                <!-- left for backup reasons in case they are requested -->
+                <!-- <div class="no-img-radios">
                   <div>
                     <input
                       type="radio"
@@ -504,7 +499,7 @@
                       Supported While Seated</label
                     >
                   </div>
-                </div>
+                </div> -->
 
                 <div class="separator vertical-separator"></div>
 
@@ -573,6 +568,57 @@
             </form>
             <div class="next-btn-container">
               <button type="button" class="btn table-b-btn">Next</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-section hidden-block">
+          <div class="results-container">
+            <div class="table-scores-container">
+              <div class="table-a-score-container">
+                <div>
+                  <h2>Arm and Wrist <br />Analysis Score</h2>
+                </div>
+                <div class="score-box">
+                  <p class="table-a-score">0</p>
+                </div>
+              </div>
+
+              <div class="separator vertical-separator"></div>
+
+              <div class="table-b-score-container">
+                <div>
+                  <h2>Neck, Trunk and <br />Leg Analysis Score</h2>
+                </div>
+                <div class="score-box">
+                  <p class="table-b-score">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="final-score-container">
+              <div>
+                <h2>Final Score</h2>
+              </div>
+              <div class="score-box final-score-box">
+                <div>
+                  <p class="final-score">0</p>
+                </div>
+                <div class="result-severity">
+                  <p>Acceptable</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="./rula-page.html"
+                rel="noopener noreferrer"
+                class="btn new-calc-btn"
+                >New Calculation</a
+              >
             </div>
           </div>
         </section>

@@ -27,17 +27,14 @@ legend {
   text-align: center;
 }
 
-label {
-  cursor: pointer;
+input[type="radio"] + label {
   outline: 2px dashed var(--dark-200);
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
 }
-
-label:hover {
-  transform: scale(1.1);
-}
-
 input[type="radio"]:checked + label {
-  outline: 3px solid var(--teal);
+  outline: 2px solid var(--teal);
   transform: scale(1.1);
 }
 
@@ -48,18 +45,16 @@ input[type="radio"]:checked + label {
   gap: 1rem;
 }
 
-.form-checkbox-section label {
-  border: 2px solid var(--dark-200);
+input[type="checkbox"] + label {
   padding: 5px;
   width: 100%;
-  outline: none;
+  outline: 2px solid var(--dark-200);
+  cursor: pointer;
 }
-
 input[type="checkbox"]:checked + label {
   background-color: var(--teal);
   color: var(--font-light);
   transform: scale(1.1);
-  outline: none;
 }
 
 .lower-arm-adjustment {
@@ -90,4 +85,89 @@ input[type="checkbox"]:checked + label {
 .next-btn-container {
   margin-left: auto;
   margin-top: 14px;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.score-box {
+  width: 200px;
+  height: 200px;
+  background-color: var(--dark-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.score-box p {
+  font-size: 200px;
+  color: var(--font-light);
+  text-shadow: 1px 1px 2px var(--dark-200);
+}
+
+.table-scores-container {
+  display: flex;
+  gap: 200px;
+  align-items: center;
+}
+
+.table-scores-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-container > .separator {
+  width: 1000px;
+}
+
+.final-score-container .score-box {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 0px 6px;
+}
+
+.result-severity {
+  transform: translateY(-20px);
+  width: 200px;
+  word-break: normal;
+}
+
+.result-severity p {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--font-light);
+  text-shadow: 1px 1px 2px var(--dark-200);
+}
+
+.results-container h2 {
+  font-weight: bold;
+}
+
+.score-green {
+  background-color: var(--green-result);
+}
+.score-yellow {
+  background-color: var(--yellow-result);
+}
+.score-orange {
+  background-color: var(--orange-result);
+}
+.score-red {
+  background-color: var(--red-result);
+}
+
+.new-calc-btn {
+  font-size: 24px;
+  padding: 8px 24px;
 }
