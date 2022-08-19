@@ -7,8 +7,7 @@ let tableAObject = {
   armSupported: 0,
 
   lowerArmPos: 0,
-  lowerArmMidline: 0,
-  lowerArmOutToSide: 0,
+  lowerArmAdjustment: 0,
 
   wristPos: 0,
   wristMidline: 0,
@@ -128,29 +127,19 @@ const finalTableColumn5 = [4, 4, 4, 5, 6, 6, 7, 7];
 const finalTableColumn6 = [5, 5, 5, 6, 7, 7, 7, 7];
 const finalTableColumn7 = [5, 5, 6, 6, 7, 7, 7, 7];
 
-const upperArmSelection = document.querySelectorAll(".upper-arm-radio");
-const lowerArmSelection = document.querySelectorAll(".lower-arm-radio");
-const wristSelection = document.querySelectorAll(".wrist-radio");
-const wristTwistSelection = document.querySelectorAll(".wrist-twist-pos");
 const tableARadios = document.querySelectorAll(
   `.rula-table-a input[type="radio"]`
 );
 const armsCheckboxes = document.querySelectorAll(
   `.rula-table-a input[type="checkbox"]`
 );
-const tableAForceSelection = document.querySelectorAll(".table-a-force-score");
 
-const neckRadio = document.querySelectorAll(".neck-radio");
-const trunkRadio = document.querySelectorAll(".trunk-radio");
-const trunkSupportedRadio = document.querySelectorAll(".trunk-supported");
-const legRadio = document.querySelectorAll(".leg-radio");
 const tableBRadios = document.querySelectorAll(
   `.rula-table-b input[type="radio"]`
 );
 const tableBCheckboxes = document.querySelectorAll(
   `.rula-table-b input[type="checkbox"]`
 );
-const tableBForceSelection = document.querySelectorAll(".table-b-force-score");
 
 const resultTableA = document.querySelector(".table-a-score");
 const resultTableB = document.querySelector(".table-b-score");
@@ -200,38 +189,10 @@ function checkRadioState(radioNodes, radioLimit) {
 }
 
 // ===============tableA===============
-function getUpperArmInputs() {
-  upperArmSelection.forEach((item) => {
+function getTableARadioInputs() {
+  tableARadios.forEach((item) => {
     if (item.checked) {
-      tableAObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-function getLowerArmInputs() {
-  lowerArmSelection.forEach((item) => {
-    if (item.checked) {
-      tableAObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-function getWristInputs() {
-  wristSelection.forEach((item) => {
-    if (item.checked) {
-      tableAObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-function getWristTwistInputs() {
-  wristTwistSelection.forEach((item) => {
-    if (item.checked) {
-      tableAObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-function getTableAForceInputs() {
-  tableAForceSelection.forEach((item) => {
-    if (item.checked) {
-      tableAObject[`${item.name}`] = Number(item.value);
+      tableAObject[item.name] = Number(item.value);
     }
   });
 }
@@ -244,7 +205,6 @@ function getTableACheckboxInputs() {
 }
 
 function getUpperArmScore() {
-  getUpperArmInputs();
   return (
     tableAObject.upperArmPos +
     tableAObject.shoulderRaised +
@@ -253,60 +213,31 @@ function getUpperArmScore() {
   );
 }
 function getLowerArmScore() {
-  getLowerArmInputs();
-  return (
-    tableAObject.lowerArmPos +
-    tableAObject.lowerArmMidline +
-    tableAObject.lowerArmOutToSide
-  );
+  return tableAObject.lowerArmPos + tableAObject.lowerArmAdjustment;
 }
 function getWristScore() {
-  getWristInputs();
   return tableAObject.wristPos + tableAObject.wristMidline;
 }
 
 function getTableAScore() {
-  getWristTwistInputs();
+  getTableARadioInputs();
   getTableACheckboxInputs();
 
-  let upperArmScore = getUpperArmScore();
-  let lowerArmScore = getLowerArmScore();
-  let wristScore = getWristScore();
-  let wristTwistScore = tableAObject.wristTwist;
+  const upperArmScore = getUpperArmScore();
+  const lowerArmScore = getLowerArmScore();
+  const wristScore = getWristScore();
+  const wristTwistScore = tableAObject.wristTwist;
   const columnSelectionArray = [wrist1, wrist2, wrist3, wrist4];
   return columnSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
     upperArmScore - 1
   ][lowerArmScore - 1];
 }
 
-console.log(["test1", "test2", "test3"][0]);
-
 // ===============tableB===============
-function getNeckInput() {
-  neckRadio.forEach((item) => {
+function getTableBRadioInputs() {
+  tableBRadios.forEach((item) => {
     if (item.checked) {
-      tableBObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-function getTrunkInput() {
-  trunkRadio.forEach((item) => {
-    if (item.checked) {
-      tableBObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
-// function getTrunkSupportInput() {
-//   trunkSupportedRadio.forEach((item) => {
-//     if (item.checked) {
-//       tableBObject[`${item.name}`] = Number(item.value);
-//     }
-//   });
-// }
-function getLegInput() {
-  legRadio.forEach((item) => {
-    if (item.checked) {
-      tableBObject[`${item.name}`] = Number(item.value);
+      tableBObject[item.name] = Number(item.value);
     }
   });
 }
@@ -317,16 +248,8 @@ function getTableBCheckboxInputs() {
     }
   });
 }
-function getTableBForceInputs() {
-  tableBForceSelection.forEach((item) => {
-    if (item.checked) {
-      tableBObject[`${item.name}`] = Number(item.value);
-    }
-  });
-}
 
 function getNeckScore() {
-  getNeckInput();
   return (
     tableBObject.neckPos +
     tableBObject.twistedNeck +
@@ -334,20 +257,18 @@ function getNeckScore() {
   );
 }
 function getTrunkScore() {
-  getTrunkInput();
-  // getTrunkSupportInput();
   return (
     tableBObject.trunkPos +
     tableBObject.trunkTwisted +
-    tableBObject.trunkSideBending
     // tableBObject.trunkSupported +
+    tableBObject.trunkSideBending
   );
 }
 
 function getTableBScore() {
-  getLegInput();
+  getTableBRadioInputs();
   getTableBCheckboxInputs();
-  let legScore = tableBObject.legSupported;
+  const legScore = tableBObject.legSupported;
   const columnSelectionArray = [trunk1, trunk2, trunk3, trunk4, trunk5, trunk6];
   return columnSelectionArray[getTrunkScore() - 1][`leg${legScore}`][
     getNeckScore() - 1
@@ -356,10 +277,8 @@ function getTableBScore() {
 
 // ===========Result===========
 function getFinalScore(tableBScore, tableAScore) {
-  getTableBForceInputs();
   tableBScore += tableBObject.tableBForceScore + tableBObject.tableBMuscleScore;
 
-  getTableAForceInputs();
   tableAScore += tableAObject.tableAForceScore + tableAObject.tableAMuscleScore;
 
   const columnSelectionArray = [
@@ -381,9 +300,9 @@ function getFinalScore(tableBScore, tableAScore) {
 }
 
 function displayScoreValues() {
-  let tableBScore = getTableBScore();
-  let tableAScore = getTableAScore();
-  let finalScoreVal = getFinalScore(tableBScore, tableAScore);
+  const tableBScore = getTableBScore();
+  const tableAScore = getTableAScore();
+  const finalScoreVal = getFinalScore(tableBScore, tableAScore);
 
   resultTableA.textContent = `${tableAScore}`;
   resultTableB.textContent = `${tableBScore}`;
