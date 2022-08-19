@@ -273,16 +273,7 @@ function getTableAScore() {
   let lowerArmScore = getLowerArmScore();
   let wristScore = getWristScore();
   let wristTwistScore = tableAObject.wristTwist;
-  console.log(upperArmScore);
-  console.log(lowerArmScore);
-  console.log(wristScore);
-  console.log(wristTwistScore);
   const objSelectionArray = [wrist1, wrist2, wrist3, wrist4];
-  console.log(
-    objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
-      upperArmScore - 1
-    ][lowerArmScore - 1]
-  );
   return objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
     upperArmScore - 1
   ][lowerArmScore - 1];
