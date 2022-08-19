@@ -273,11 +273,13 @@ function getTableAScore() {
   let lowerArmScore = getLowerArmScore();
   let wristScore = getWristScore();
   let wristTwistScore = tableAObject.wristTwist;
-  const objSelectionArray = [wrist1, wrist2, wrist3, wrist4];
-  return objSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
+  const columnSelectionArray = [wrist1, wrist2, wrist3, wrist4];
+  return columnSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
     upperArmScore - 1
   ][lowerArmScore - 1];
 }
+
+console.log(["test1", "test2", "test3"][0]);
 
 // ===============tableB===============
 function getNeckInput() {
@@ -346,8 +348,8 @@ function getTableBScore() {
   getLegInput();
   getTableBCheckboxInputs();
   let legScore = tableBObject.legSupported;
-  const objSelectionArray = [trunk1, trunk2, trunk3, trunk4, trunk5, trunk6];
-  return objSelectionArray[getTrunkScore() - 1][`leg${legScore}`][
+  const columnSelectionArray = [trunk1, trunk2, trunk3, trunk4, trunk5, trunk6];
+  return columnSelectionArray[getTrunkScore() - 1][`leg${legScore}`][
     getNeckScore() - 1
   ];
 }
@@ -360,7 +362,7 @@ function getFinalScore(tableBScore, tableAScore) {
   getTableAForceInputs();
   tableAScore += tableAObject.tableAForceScore + tableAObject.tableAMuscleScore;
 
-  const selectionArray = [
+  const columnSelectionArray = [
     finalTableColumn1,
     finalTableColumn2,
     finalTableColumn3,
@@ -375,7 +377,7 @@ function getFinalScore(tableBScore, tableAScore) {
   if (tableAScore > 8) {
     tableAScore = 8;
   }
-  return selectionArray[tableBScore - 1][tableAScore - 1];
+  return columnSelectionArray[tableBScore - 1][tableAScore - 1];
 }
 
 function displayScoreValues() {
