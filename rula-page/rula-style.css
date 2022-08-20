@@ -82,6 +82,14 @@ input[type="checkbox"]:checked + label {
   padding: 6px;
 }
 
+.muscle-use-container div {
+  margin: 0 auto;
+  font-size: 20px;
+}
+.force-use-container div {
+  font-size: 20px;
+}
+
 .next-btn-container {
   margin-left: auto;
   margin-top: 14px;
@@ -98,8 +106,8 @@ input[type="checkbox"]:checked + label {
 }
 
 .score-box {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background-color: var(--dark-200);
   display: flex;
   align-items: center;
@@ -108,7 +116,7 @@ input[type="checkbox"]:checked + label {
 }
 
 .score-box p {
-  font-size: 200px;
+  font-size: 180px;
   color: var(--font-light);
   text-shadow: 1px 1px 2px var(--dark-200);
 }
@@ -170,13 +178,4 @@ input[type="checkbox"]:checked + label {
 .new-calc-btn {
   font-size: 24px;
   padding: 8px 24px;
-}
-
-.muscle-use-container div {
-  margin: 0 auto;
-  font-size: 20px;
-}
-
-.force-use-container div {
-  font-size: 20px;
 }

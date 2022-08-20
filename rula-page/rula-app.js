@@ -155,22 +155,26 @@ const tableBView = document.querySelector(".rula-table-b");
 const resultView = document.querySelector(".results-section");
 
 tableABtn.addEventListener("click", () => {
-  checkRadioState(tableARadios, 4);
+  checkRadioState(tableARadios, 4) ? switchToNextView() : throwWarning(4);
 });
 tableBBtn.addEventListener("click", () => {
   if (checkRadioState(tableBRadios, 3)) {
     switchToResultsView();
     displayScoreValues();
+  } else {
+    throwWarning(3);
   }
 });
 
 function switchToNextView() {
   tableAView.classList.add("hidden-block");
   tableBView.classList.remove("hidden-block");
+  document.querySelector("header").scrollIntoView();
 }
 function switchToResultsView() {
   tableBView.classList.add("hidden-block");
   resultView.classList.remove("hidden-block");
+  finalScoreBox.scrollIntoView();
 }
 
 function checkRadioState(radioNodes, radioLimit) {
@@ -182,10 +186,13 @@ function checkRadioState(radioNodes, radioLimit) {
     }
   });
 
-  if (itemCount >= radioLimit) {
-    switchToNextView();
-    return true;
-  }
+  return itemCount >= radioLimit ? true : false;
+}
+
+function throwWarning(items) {
+  alert(
+    `You must select at least 1 choice in each of the top ${items} sections`
+  );
 }
 
 // ===============tableA===============
@@ -204,7 +211,7 @@ function getTableACheckboxInputs() {
   });
 }
 
-function getUpperArmScore() {
+function calcUpperArmScore() {
   return (
     tableAObject.upperArmPos +
     tableAObject.shoulderRaised +
@@ -212,20 +219,20 @@ function getUpperArmScore() {
     tableAObject.armSupported
   );
 }
-function getLowerArmScore() {
+function calcLowerArmScore() {
   return tableAObject.lowerArmPos + tableAObject.lowerArmAdjustment;
 }
-function getWristScore() {
+function calcWristScore() {
   return tableAObject.wristPos + tableAObject.wristMidline;
 }
 
-function getTableAScore() {
+function calcTableAScore() {
   getTableARadioInputs();
   getTableACheckboxInputs();
 
-  const upperArmScore = getUpperArmScore();
-  const lowerArmScore = getLowerArmScore();
-  const wristScore = getWristScore();
+  const upperArmScore = calcUpperArmScore();
+  const lowerArmScore = calcLowerArmScore();
+  const wristScore = calcWristScore();
   const wristTwistScore = tableAObject.wristTwist;
   const columnSelectionArray = [wrist1, wrist2, wrist3, wrist4];
   return columnSelectionArray[wristScore - 1][`wristTwist${wristTwistScore}`][
@@ -249,14 +256,14 @@ function getTableBCheckboxInputs() {
   });
 }
 
-function getNeckScore() {
+function calcNeckScore() {
   return (
     tableBObject.neckPos +
     tableBObject.twistedNeck +
     tableBObject.neckSideBending
   );
 }
-function getTrunkScore() {
+function calcTrunkScore() {
   return (
     tableBObject.trunkPos +
     tableBObject.trunkTwisted +
@@ -265,13 +272,13 @@ function getTrunkScore() {
   );
 }
 
-function getTableBScore() {
+function calcTableBScore() {
   getTableBRadioInputs();
   getTableBCheckboxInputs();
   const legScore = tableBObject.legSupported;
   const columnSelectionArray = [trunk1, trunk2, trunk3, trunk4, trunk5, trunk6];
-  return columnSelectionArray[getTrunkScore() - 1][`leg${legScore}`][
-    getNeckScore() - 1
+  return columnSelectionArray[calcTrunkScore() - 1][`leg${legScore}`][
+    calcNeckScore() - 1
   ];
 }
 
@@ -300,8 +307,8 @@ function getFinalScore(tableBScore, tableAScore) {
 }
 
 function displayScoreValues() {
-  const tableBScore = getTableBScore();
-  const tableAScore = getTableAScore();
+  const tableBScore = calcTableBScore();
+  const tableAScore = calcTableAScore();
   const finalScoreVal = getFinalScore(tableBScore, tableAScore);
 
   resultTableA.textContent = `${tableAScore}`;
@@ -324,9 +331,4 @@ function displayFinalScoreColor(finalScore) {
     finalScoreBox.classList.add("score-red");
     finalScoreSeverity.textContent = "Investigate and change Immediately";
   }
-}
-// ===========TEMP===========
-const displayResult = document.querySelector(".rula-result");
-function tempRulaRunner() {
-  displayResult.textContent = getTableAScore();
 }
