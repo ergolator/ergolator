@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../assets/css/variables.css" />
+    <link rel="stylesheet" href="../assets/css/globals.css" />
+    <link rel="stylesheet" href="./rula-style.css" />
+
+    <title>Ergolator - RULA</title>
+  </head>
+
+  <body>
+
+    <header class="nav-header">
+      <nav class="navbar container">
+        <ul class="nav-list">
+          <li class="nav-item nav-logo">
+            <a href="../index.html" class="nav-logo-link">Ergolator</a>
+          </li>
+          <li class="nav-item current-page">
+            <h1>RULA</h1>
+          </li>
+          <li class="nav-item nav-calc">
+            <a href="#" class="nav-link">REBA</a>
+          </li>
+          <li class="nav-item nav-calc">
+            <a href="#" class="nav-link">WISHA</a>
+          </li>
+          <li class="nav-item nav-calc">
+            <a href="#" class="nav-link">ROSA</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <section class="rula-table-a">
+          <div class="form-container table-a-form-container">
+            <form action="">
+              <div class="upper-arm-container form-section">
+                <legend>
+                  Upper <br />
+                  Arm <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="upperArmPos"
+                    id="upper-arm-a"
+                    required
+                    class="upper-arm-radio"
+                    value="1"
+                  />
+                  <label for="upper-arm-a">
+                    <img src="./imgs/TableA/upper-arm-1.png" width="140px" height="190px" alt="" /> <br />
+                    -20 to 20
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="upperArmPos"
+                    id="upper-arm-b"
+                    class="upper-arm-radio"
+                    value="2"
+                  />
+                  <label for="upper-arm-b">
+                    <img src="./imgs/TableA/upper-arm-2.png" width="140px" height="190px" alt="" /> <br />
+                    -20 or further back
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="upperArmPos"
+                    id="upper-arm-c"
+                    class="upper-arm-radio"
+                    value="2"
+                  />
+                  <label for="upper-arm-c">
+                    <img src="./imgs/TableA/upper-arm-3.png" width="140px" height="190px" alt="" /> <br />
+                    20 to 45
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="upperArmPos"
+                    id="upper-arm-d"
+                    class="upper-arm-radio"
+                    value="3"
+                  />
+                  <label for="upper-arm-d">
+                    <img src="./imgs/TableA/upper-arm-4.png" width="140px" height="190px" alt="" /> <br />
+                    45 to 90
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="upperArmPos"
+                    id="upper-arm-e"
+                    class="upper-arm-radio"
+                    value="4"
+                  />
+                  <label for="upper-arm-e">
+                    <img src="./imgs/TableA/upper-arm-5.png" width="140px" height="190px" alt="" /> <br />
+                    90 or more
+                  </label>
+                </div>
+
+                <div class="separator vertical-separator"></div>
+
+                <div class="upper-arm-checkbox form-checkbox-section">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="shoulderRaised"
+                      id="shoulder-raised"
+                      value="1"
+                    />
+                    <label for="shoulder-raised">Shoulder is Raised</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="armAbducted"
+                      id="arm-abducted"
+                      value="1"
+                    />
+                    <label for="arm-abducted">Upper Arm is abducted</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="armSupported"
+                      id="arm-supported"
+                      value="-1"
+                    />
+                    <label for="arm-supported">Arm is supported</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="lower-arm-container form-section">
+                <legend>
+                  Lower <br />
+                  Arm <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="lowerArmPos"
+                    id="lower-arm-a"
+                    required
+                    class="lower-arm-radio"
+                    value="1"
+                  />
+                  <label for="lower-arm-a">
+                    <img src="./imgs/TableA/lower-arm-1.png" width="140px" height="190px" alt="" /> <br />
+                    60 to 100
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="lowerArmPos"
+                    id="lower-arm-b"
+                    class="lower-arm-radio"
+                    value="2"
+                  />
+                  <label for="lower-arm-b">
+                    <img src="./imgs/TableA/lower-arm-2.png" width="140px" height="190px" alt="" /> <br />
+                    0 to 60 or 100+
+                  </label>
+                </div>
+
+                <div class="separator vertical-separator"></div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="lowerArmAdjustment"
+                    id="lower-arm-midline-body"
+                    required
+                    value="1"
+                  />
+                  <label
+                    class="lower-arm-adjustment"
+                    for="lower-arm-midline-body"
+                    >Arm is working across midline of the body</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="lowerArmAdjustment"
+                    id="lower-arm-outside-body"
+                    value="1"
+                  />
+                  <label
+                    class="lower-arm-adjustment"
+                    for="lower-arm-outside-body"
+                    >Arm is out to side of the body</label
+                  >
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="wrist-container form-section">
+                <legend>
+                  Wrist <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="wristPos"
+                    id="wrist-a"
+                    required
+                    class="wrist-radio"
+                    value="1"
+                  />
+                  <label for="wrist-a">
+                    <img src="./imgs/TableA/wrist-1.png" width="140px" height="70px" alt="" /> <br />
+                    Zero
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="wristPos"
+                    id="wrist-b"
+                    class="wrist-radio"
+                    value="2"
+                  />
+                  <label for="wrist-b">
+                    <img src="./imgs/TableA/wrist-2.png" width="140px" height="70px" alt="" /> <br />
+                    15 to 15
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="wristPos"
+                    id="wrist-c"
+                    class="wrist-radio"
+                    value="3"
+                  />
+                  <label for="wrist-c">
+                    <img src="./imgs/TableA/wrist-3.png" width="140px" height="70px" alt="" /> <br />
+                    15+ to 15+
+                  </label>
+                </div>
+
+                <div class="separator vertical-separator"></div>
+
+                <div class="wrist-checkbox form-checkbox-section">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="wristMidline"
+                      id="wrist-midline-body"
+                      value="1"
+                    />
+                    <label for="wrist-midline-body">
+                      <img src="./imgs/TableA/wrist-4.png" width="140px" height="107px" alt="" /><br />Wrist
+                      is bent<br />from the midline
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="wrist-twist-container form-section">
+                <legend>
+                  Wrist <br />
+                  Twist
+                </legend>
+                <div class="wrist-twist-checkbox form-checkbox-section">
+                  <div>
+                    <input
+                      type="radio"
+                      name="wristTwist"
+                      id="wrist-twist-mid-range"
+                      class="wrist-twist-pos"
+                      value="1"
+                    />
+                    <label for="wrist-twist-mid-range">
+                      Wrist is twisted in mid-range
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="wristTwist"
+                      id="wrist-twist-end-body"
+                      class="wrist-twist-pos"
+                      value="2"
+                    />
+                    <label for="wrist-twist-end-body"
+                      >Wrist is twisted at or near end of range</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="muscle-use-container form-section">
+                <legend>
+                  Muscle use <br />
+                  Score
+                </legend>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="tableAMuscleScore"
+                      id="table-a-muscle-score"
+                      class="table-a-muscle-score"
+                      value="1"
+                    />
+                    <label for="table-a-muscle-score">
+                      If posture mainly static (held for longer than 1 minute)
+                      <br />
+                      or if action repeatedly occurs 4 times per minute or more
+                    </label>
+                  </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="force-use-container form-section">
+                <legend>Load Score</legend>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-a"
+                      class="table-a-force-score"
+                      value="0"
+                    />
+                    <label for="table-a-force-score-a">
+                      If load less than 2 KG <br> (intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-b"
+                      class="table-a-force-score"
+                      value="1"
+                    />
+                    <label for="table-a-force-score-b">
+                      If 2 KG to 10 KG  <br>(intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-c"
+                      class="table-a-force-score"
+                      value="2"
+                    />
+                    <label for="table-a-force-score-c">
+                      If 2 KG to 10 KG <br> (static or repeated)
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableAForceScore"
+                      id="table-a-force-score-d"
+                      class="table-a-force-score"
+                      value="3"
+                    />
+                    <label for="table-a-force-score-d">
+                      If more than 10 KG load <br> or repeated or shocks
+                    </label>
+                  </div>
+              </div>
+            </form>
+
+            <div class="separator end-separator"></div>
+
+            <div class="next-btn-container">
+              <button type="button" class="btn table-a-btn section-switch-btn">Next</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="rula-table-b hidden-block">
+          <div class="form-container table-b-form-container">
+            <form action="">
+              <div class="neck-container form-section">
+                <legend>
+                  Neck <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="neckPos"
+                    id="neck-a"
+                    required
+                    class="neck-radio"
+                    value="1"
+                  />
+                  <label for="neck-a">
+                    <img src="./imgs/TableB/neck1.png" width="140px" height="211px" alt="" /> <br />
+                    0 to 10
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="neckPos"
+                    id="neck-b"
+                    class="neck-radio"
+                    value="2"
+                  />
+                  <label for="neck-b">
+                    <img src="./imgs/TableB/neck2.png" width="140px" height="178px" alt="" /> <br />
+                    10 to 20
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="neckPos"
+                    id="neck-c"
+                    class="neck-radio"
+                    value="3"
+                  />
+                  <label for="neck-c">
+                    <img src="./imgs/TableB/neck3.png" width="140px" height="163px" alt="" /> <br />
+                    20 or more
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="neckPos"
+                    id="neck-d"
+                    class="neck-radio"
+                    value="4"
+                  />
+                  <label for="neck-d">
+                    <img src="./imgs/TableB/neck4.png" width="140px" height="162px" alt="" /> <br />
+                    Bent Backwards
+                  </label>
+                </div>
+
+                <div class="separator vertical-separator"></div>
+
+                <div class="neck-checkbox form-checkbox-section">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="twistedNeck"
+                      id="twisted-neck"
+                      value="1"
+                    />
+                    <label for="twisted-neck">Neck is Twisted</label>
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="neckSideBending"
+                      id="neck-side-bending"
+                      value="1"
+                    />
+                    <label for="neck-side-bending">Neck is Side-Bending</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="trunk-container form-section">
+                <legend>
+                  Trunk <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="trunkPos"
+                    id="trunk-a"
+                    required
+                    class="trunk-radio"
+                    value="1"
+                  />
+                  <label for="trunk-a">
+                    <img src="./imgs/TableB/trunk1.png" width="140px" height="199px" alt="" /> <br />
+                    0 to 10
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="trunkPos"
+                    id="trunk-b"
+                    class="trunk-radio"
+                    value="2"
+                  />
+                  <label for="trunk-b">
+                    <img src="./imgs/TableB/trunk2.png" width="140px" height="190px" alt="" /> <br />
+                    0 to 20
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="trunkPos"
+                    id="trunk-c"
+                    class="trunk-radio"
+                    value="3"
+                  />
+                  <label for="trunk-c">
+                    <img src="./imgs/TableB/trunk3.png" width="140px" height="123px" alt="" /> <br />
+                    20 to 60
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="trunkPos"
+                    id="trunk-d"
+                    class="trunk-radio"
+                    value="4"
+                  />
+                  <label for="trunk-d">
+                    <img src="./imgs/TableB/trunk4.png" width="140px" height="112px" alt="" /> <br />
+                    60 or more
+                  </label>
+                </div>
+
+                <!-- <div class="separator vertical-separator"></div> -->
+
+                <!-- left for backup reasons in case they are requested -->
+                <!-- <div class="no-img-radios">
+                  <div>
+                    <input
+                      type="radio"
+                      name="trunkSupported"
+                      id="trunk-supported"
+                      value="1"
+                      class="trunk-supported"
+                    />
+                    <label class="trunk-adjustment" for="trunk-supported"
+                      >Trunk is Well <br />
+                      Supported While Seated</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="trunkSupported"
+                      id="trunk-not-supported"
+                      value="2"
+                      class="trunk-supported"
+                    />
+                    <label class="trunk-adjustment" for="trunk-not-supported"
+                      >Trunk is Not <br />
+                      Supported While Seated</label
+                    >
+                  </div>
+                </div> -->
+
+                <div class="separator vertical-separator"></div>
+
+                <div class="trunk-checkbox form-checkbox-section">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="trunkTwisted"
+                      id="trunk-twisted"
+                      required
+                      value="1"
+                    />
+                    <label class="trunk-adjustment" for="trunk-twisted"
+                      >Trunk is Twisted</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="trunkSideBending"
+                      id="trunk-side-bending"
+                      value="1"
+                    />
+                    <label class="trunk-adjustment" for="trunk-side-bending"
+                      >Trunk is Side-Bending</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="leg-container form-section">
+                <legend>
+                  Leg <br />
+                  Position
+                </legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="legSupported"
+                    id="leg-supported"
+                    value="1"
+                    class="leg-radio"
+                  />
+                  <label class="leg-adjustment" for="leg-supported"
+                    >Legs and Feet are <br />
+                    Supported and Balanced</label
+                  >
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="legSupported"
+                    id="leg-not-supported"
+                    value="2"
+                    class="leg-radio"
+                  />
+                  <label class="leg-adjustment" for="leg-not-supported"
+                    >Legs and Feet are Not <br />
+                    Supported and Balanced</label
+                  >
+                </div>
+              </div>
+            
+              <div class="separator"></div>
+
+              <div class="muscle-use-container form-section">
+                <legend>
+                  Muscle use <br />
+                  Score
+                </legend>
+
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="tableBMuscleScore"
+                      id="table-b-muscle-score"
+                      class="table-b-muscle-score"
+                      value="1"
+                    />
+                    <label for="table-b-muscle-score">
+                      If posture mainly static
+                      <br />
+                      or if action repeatedly occurs 4 times per minute or more
+                    </label>
+                  </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <div class="force-use-container form-section">
+                <legend>Load Score</legend>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-a"
+                      class="table-b-force-score"
+                      value="0"
+                    />
+                    <label for="table-b-force-score-a">
+                      If load less than 2 KG <br> (intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-b"
+                      class="table-b-force-score"
+                      value="1"
+                    />
+                    <label for="table-b-force-score-b">
+                      If 2 KG to 10 KG  <br>(intermittent)
+                    </label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-c"
+                      class="table-b-force-score"
+                      value="2"
+                    />
+                    <label for="table-b-force-score-c">
+                      If 2 KG to 10 KG <br> (static or repeated)
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="tableBForceScore"
+                      id="table-b-force-score-d"
+                      class="table-b-force-score"
+                      value="3"
+                    />
+                    <label for="table-b-force-score-d">
+                      If more than 10 KG load <br> or repeated or shocks
+                    </label>
+                  </div>
+              </div>
+            </form>
+
+            <div class="next-btn-container">
+              <button type="button" class="btn table-b-btn section-switch-btn">Next</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-section hidden-block">
+          <div class="results-container">
+            <div class="table-scores-container">
+              <div class="table-a-score-container">
+                <div>
+                  <h2>Arm and Wrist <br />Analysis Score</h2>
+                </div>
+                <div class="score-box">
+                  <p class="table-a-score">0</p>
+                </div>
+              </div>
+
+              <div class="separator vertical-separator"></div>
+
+              <div class="table-b-score-container">
+                <div>
+                  <h2>Neck, Trunk and <br />Leg Analysis Score</h2>
+                </div>
+                <div class="score-box">
+                  <p class="table-b-score">0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="final-score-container">
+              <div>
+                <h2>Final Score</h2>
+              </div>
+              <div class="score-box final-score-box">
+                <div>
+                  <p class="final-score">0</p>
+                </div>
+                <div class="result-severity">
+                  <p>Acceptable</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a
+                href="./rula-page.html"
+                rel="noopener noreferrer"
+                class="btn new-calc-btn"
+                >New Calculation</a
+              >
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-text-container">
+        <div class="footer-text">
+          <p>
+            Made by
+            <a
+              href="https://github.com/imohammedramadan"
+              target="_blank"
+              rel="noreferrer noopener"
+              >Mohammed Ramadan</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="./rula-app.js" defer></script>
+  </body>
+</html>

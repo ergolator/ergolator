@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  color: var(--font-dark);
 }
 
 body,
@@ -24,7 +25,7 @@ button {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   color: var(--font-dark);
 }
 
@@ -54,15 +55,107 @@ a {
   width: 1px;
 }
 
-/* =======header======= */
-.logo-container {
-  background-color: var(--dark-200);
-  padding: 16.5px 0;
+.container {
+  width: 70%;
+  margin: 0 auto;
 }
-.logo-container h1 {
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+.separator {
+  border: 1px solid var(--separator);
+}
+
+.vertical-separator {
+  height: 200px;
+}
+
+.hidden-block {
+  display: none;
+}
+
+.btn {
+  background-color: var(--teal);
+  border: 1px solid var(--dark-200);
+  font-size: 20px;
+  color: var(--font-light);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.end-separator {
+  margin-top: 20px;
+}
+/* =======header======= */
+.nav-header {
+  background-color: var(--dark-200);
+  padding: 16px 0;
+}
+
+.nav-item,
+.nav-link,
+.nav-logo-link,
+.current-page h1 {
   color: var(--font-light);
 }
+
+.nav-logo-link {
+  font-size: 24px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-logo {
+  margin-right: auto;
+}
+
+.current-page {
+  margin-right: auto;
+}
+
+.nav-link:hover,
+.nav-logo-link:hover {
+  color: var(--teal);
+}
 /* =======header======= */
+
+/* =======main======= */
+main {
+  min-height: calc(100vh - (60px + 46px));
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+/* =======main======= */
 
 /* =======footer======= */
 .footer-text-container {

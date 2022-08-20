@@ -2,12 +2,13 @@
 .landing-logo {
   text-align: center;
 }
+.nav-logo-link:hover {
+  color: var(--font-light);
+  cursor: default;
+}
 /* =======header======= */
 
 /* =======main======= */
-main {
-  min-height: calc(100vh - (70px + 46px));
-}
 .calc-grid-container {
   min-height: calc(100vh - (70px + 46px));
   display: grid;
